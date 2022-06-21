@@ -22,6 +22,18 @@ app.get("/api/tasks", async (_, res) => {
     }
   });
 
+  app.get("/api/tasks/:id", async (req, res) => {
+    const id = req.params.id
+    try {
+        await db.query('SELECT * FROM tasks WHERE id = $1',  [id], (error, results) => {
+            
+            res.status(200).json(results.rows)
+        })
+    } catch (error) {
+        console.error(error.message)
+    }
+  });
+
 app.post("/api/create", async (req, res) => {
    try {
     const {task_content, due_date, completed} = req.body

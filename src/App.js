@@ -70,7 +70,7 @@ render () {
   }
 
   const updateTodo = (taskData, id) => {
-    console.log(taskData)
+    // console.log(taskData)
     this.state.loading = this.setState({loading: true, loadingMessage: 'Updating your todo list...'})
     fetch(
       `http://localhost:8001/api/update/${id}`,

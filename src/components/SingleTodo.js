@@ -4,6 +4,7 @@ import Delete from './Delete';
 import Back from './Back';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import UpdateTodo from './UpdateTodo';
 
 class SingleTodo extends React.Component {
 
@@ -12,20 +13,21 @@ class SingleTodo extends React.Component {
         const singleTodo = this.props.singleTodo[0]
         
         
-        // const click = () => {
-        //     const audio = new Audio("./public/buttonclick.mp3")
-        //     audio.play()
-        // }
+       
         return (
             <div className='singleTodoItem' id={singleTodo.id}>
-               
-                <h1> {singleTodo.task_content} </h1>
+
+                
+                <h2> {singleTodo.task_content} </h2>
                 <p>Date Entered: <Moment>{singleTodo.due_date}</Moment></p>
-                {/* <Button singleTodo={singleTodo} click={click} id={singleTodo.id} clearSingleTodo={this.props.clearSingleTodo} todo={this.props.task_content}/> */}
+                
                 <div className='buttons'>
                 <Delete className='delete-btn' singleTodo={singleTodo} id={singleTodo.id} deleteTodo={this.props.deleteTodo}/>
                 <Back className='back-btn' singleTodo={singleTodo} id={singleTodo.id} clearSingleTodo={this.props.clearSingleTodo}/>
+                
                 </div>
+
+                <UpdateTodo className='update-btn' singleTodo={singleTodo} id={singleTodo.id} updateTodo={this.props.updateTodo}/>
             </div>
         )
     }

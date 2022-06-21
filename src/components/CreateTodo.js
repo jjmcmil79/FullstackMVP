@@ -19,7 +19,7 @@ class CreateTodo extends React.Component {
         let string = JSON.stringify(taskData)
         console.log(string)
         this.props.createTodo(string)
-        e.preventDefault()
+        // e.preventDefault()
         }
         
         return(

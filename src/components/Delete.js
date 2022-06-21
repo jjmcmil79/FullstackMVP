@@ -17,7 +17,7 @@ class Delete extends React.Component {
         return (
             <div>
                 
-                <FaTrash className='delete' id={this.props.id} onClick={handleDeleteTodo}/>
+                <FaTrash id='delete' onClick={handleDeleteTodo}/>
                 
             </div>
         )

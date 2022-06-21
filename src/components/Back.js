@@ -6,7 +6,7 @@ class Back extends React.Component {
     render () {
         return (
             <div>
-                <FaArrowLeft className='back' onClick={this.props.clearSingleTodo}/>
+                <FaArrowLeft id='back' onClick={this.props.clearSingleTodo}/>
             </div>
         )
     }

@@ -11,7 +11,7 @@
 	--red: #dc143c;
 	--darkgray: #181716;
 	--darkergray: #272727;
-	--transblack: rgba(39,39,39,0.5);
+	--transblack: rgba(39,39,39,0.3);
 }
 
 body {
@@ -21,6 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -28,25 +29,74 @@ code {
     monospace;
 }
 
+.newTodo {
+  background-image: url(/public/pencil-bg3.png);
+  background-size: cover;
+}
+.mainheader {
+	padding: 1rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	/* min-width: min-content; */
+	
+}
 .todoItem {
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: .5rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  width: 30rem;
   font-family: Arial, Helvetica, sans-serif;
-  /* border-bottom: dotted red; */
+  color: var(--darkergray);
+  /* background-color: var(--transblack); */
+  /* border-bottom: 4px dotted red; */
 }
 
 .todoItem:hover {
   cursor: pointer;
 }
-.singleTodo {
-  font-size: 3rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: blue;
+.singleTodoItem {
+  display: flex;
+  flex-direction: column;
+  font-family: "Chalkduster", fantasy;
+  color: var(--darkergray);
+  text-align: center;
+  justify-content: center;
+  height: 50px;
+  padding: 100px 0;
+
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+  opacity: 0.7;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 #new-todo-form {
   display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 35%;
+  width: 30rem;
+  margin: 0 auto;
 
 }
 
@@ -56,9 +106,10 @@ code {
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
-	color: var(--light);
-	font-size: 1.25rem;
+	color: var(--grey);
+	font-size: 1rem;
 	background-color: var(--transblack);
+  
 }
 #new-todo-input:hover {
 	background-color: var(--darkergray);
@@ -66,4 +117,25 @@ code {
 
 #new-todo-input::placeholder {
 	color: var(--grey);
+}
+
+#new-todo-submit {
+	color: var(--pink);
+	font-size: 1.25rem;
+	font-weight: 700;
+	background-image: linear-gradient(to right, var(--red), var(--pink), var(--aero), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+	transition: 0.4s;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#new-todo-submit:hover {
+	opacity: 0.7;
+}
+
+#new-todo-submit:active {
+	opacity: 0.5;
 }

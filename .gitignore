@@ -1,3 +1,4 @@
 node_modules
-
-.appex.js
+./UpdateTodo1.js
+./ItemButtons1.js
+./appex.js

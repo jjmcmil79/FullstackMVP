@@ -3,6 +3,8 @@ import Loading from './components/Loading'
 import Todos from './components/Todos'
 import SingleTodo from './components/SingleTodo'
 import CreateTodo from './components/CreateTodo'
+import Weather from './components/Weather'
+import UpdateTodo from './components/UpdateTodo'
 
 
 class App extends React.Component {
@@ -13,7 +15,7 @@ class App extends React.Component {
       singleTodo: null,
       loading: true,
       loadingMessage: 'App is loading....',
-      todoData: null
+      weatherData: null
     }
   }
 
@@ -25,6 +27,14 @@ componentDidMount() {
   
 }
 render () {
+
+  // const getWeather = () => {
+  //   const API_Key = "705b7e2bf903340ad3d67654088d5536"
+  //   fetch(`https://api.openweathermap.org/data/2.5/weather?zip=76544,US&appid=${API_Key}`)
+  //   .then((response) => response.json())
+  //   .then((data) => this.setState({weatherData: data, loading: false}))
+  //   console.log(this.state.weatherData)
+  // }
 
   const deleteTodo = (id) => {
     console.log(id)
@@ -56,6 +66,7 @@ render () {
     .then((response) => response.json())
     this.setState({loading: false})
     // console.log(this.state)
+    
   }
 
   const updateTodo = (taskData, id) => {
@@ -91,14 +102,19 @@ render () {
 
   if(this.state.singleTodo) {
   return (
-    <SingleTodo singleTodo={this.state.singleTodo} clearSingleTodo={clearSingleTodo} deleteTodo={deleteTodo}/>
+    <SingleTodo singleTodo={this.state.singleTodo} clearSingleTodo={clearSingleTodo} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
     )
   } 
   else {
     return (
-      <div>
+      <div className='newTodo'>
+        <h1 className='mainheader'>React Todo App</h1>
           <CreateTodo createTodo={createTodo}/>
-    <Todos todos={this.state.todos} setSingleTodo={setSingleTodo}/>
+    <div>
+      {/* <Weather getWeather={this.state.weatherData} /> */}
+      <Todos todos={this.state.todos} setSingleTodo={setSingleTodo}/>
+    
+    </div>
     </div>
     )
   }

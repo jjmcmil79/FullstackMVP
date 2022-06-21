@@ -9,6 +9,7 @@ class CreateTodo extends React.Component {
 
             const task = e.target[0].value;
         const jsonDate = new Date();
+        console.log(jsonDate)
       
         let taskData = {
           task_content: task,
@@ -16,7 +17,9 @@ class CreateTodo extends React.Component {
           completed: "false",
         };
         let string = JSON.stringify(taskData)
+        console.log(string)
         this.props.createTodo(string)
+        e.preventDefault()
         }
         
         return(

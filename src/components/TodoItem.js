@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemButtons from './ItemButtons'
+
 
 class TodoItem extends React.Component {
 
@@ -8,15 +8,8 @@ class TodoItem extends React.Component {
             this.props.setSingleTodo(e)
             console.log(e)
         }
-        const handleInputChange = (e) => {
-            let input = e.target;
-            let name = e.target.name;
-            let value = input.value;
         
-            this.setState({
-              [name]: value,
-            });
-          };
+          
         return (
             <div className='todo'>
             <div className='todoItem' id={this.props.elem.id} onClick={handleSetSingleTodo}>{this.props.elem.task_content}</div>

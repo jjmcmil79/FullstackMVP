@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks(
    id SERIAL PRIMARY KEY NOT NULL,
    task_content VARCHAR(100) NOT NULL,
-   due_date date NOT NULL,
+   due_date timestamp with time zone NOT NULL,
    completed boolean NOT NULL
 );
 
